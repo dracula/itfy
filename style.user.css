@@ -1,0 +1,111 @@
+/* ==UserStyle==
+@name ITFY Dracula
+@version 0.1
+@description 🧛🏻‍♂️ Dark theme for ITFY
+@author DaSh-More
+@namespace https://github.com/Dracula
+@license MIT
+
+@homepageURL https://github.com/Dracula/ITFY
+@supportURL https://github.com/Dracula/ITFY/issues
+@updateURL https://github.com/Dracula/ITFY/raw/master/style.user.css
+
+
+@preprocessor stylus
+@var checkbox theme-code-editor "Use theme for code editor" 0
+@var checkbox grey-title "Gray Title bar" 1
+@var checkbox use-font-settings "Use custom font" 1
+@var text custom-font "Font" "Consolas"
+@var number custom-font-size "Font size" 14
+==/UserStyle== */
+@-moz-document domain("itfy.org") {
+
+
+	div.bbCodeBlock-content[dir="ltr"] {
+		background-color: #282a36;
+		color: #f8f8f2;
+	}
+
+	if use-font-settings {
+		div.CodeMirror-code,
+		pre.bbCodeCode.language-python {
+			font-family: custom-font;
+			font-size: custom-font-size px;
+		}
+	}
+
+	pre.bbCodeCode.language-python .prism-token.prism-string {
+		color: #f1fa8c;
+	}
+	pre.bbCodeCode.language-python .prism-token.prism-builtin,
+	pre.bbCodeCode.language-python .prism-token.prism-class-name {
+		color: #8be9fd;
+	}
+
+	pre.bbCodeCode.language-python .prism-token.prism-operator,
+	pre.bbCodeCode.language-python .prism-token.prism-keyword {
+		color: #ff79c6;
+	}
+	pre.bbCodeCode.language-python .prism-token.prism-function {
+		color: #50fa7b;
+	}
+
+	pre.bbCodeCode.language-python .prism-token.prism-punctuation {
+		color: #ffb86c;
+	}
+
+	pre.bbCodeCode.language-python .prism-token.prism-boolean,
+	pre.bbCodeCode.language-python .prism-token.prism-number {
+		color: #bd93f9;
+	}
+
+	pre.bbCodeCode.language-python .prism-token.prism-comment {
+		color: #6272a4;
+	}
+
+	if grey-title {
+		.bbCodeBlock-title {
+			background-color: #50546c;
+			font-size: 18px;
+			color: #f8f8f2;
+		}
+	}
+
+	if theme-code-editor {
+		
+		.CodeMirror.CodeMirror-simplescroll.codeEditor {
+			background-color: #282a36;
+			color: #f8f8f2;
+		}
+		.CodeMirror-linenumber.CodeMirror-gutter-elt,
+		.CodeMirror-gutter.CodeMirror-linenumbers {
+			background-color: #50546c;
+			font-size: custom-font-size px;
+			color: #f8f8f2;
+		}
+
+		.CodeMirror.CodeMirror-simplescroll.codeEditor span.cm-string {
+			color: #f1fa8c;
+		}
+		.CodeMirror.CodeMirror-simplescroll.codeEditor span.cm-builtin {
+			color: #8be9fd;
+		}
+
+		.CodeMirror.CodeMirror-simplescroll.codeEditor span.cm-operator,
+		.CodeMirror.CodeMirror-simplescroll.codeEditor span.cm-keyword {
+			color: #ff79c6;
+		}
+		.CodeMirror.CodeMirror-simplescroll.codeEditor span.cm-def {
+			color: #50fa7b;
+		}
+
+		.CodeMirror.CodeMirror-simplescroll.codeEditor span.cm-boolean,
+		.CodeMirror.CodeMirror-simplescroll.codeEditor span.cm-number {
+			color: #bd93f9;
+		}
+
+		.CodeMirror.CodeMirror-simplescroll.codeEditor span.cm-comment {
+			color: #6272a4;
+		}
+	}
+}
